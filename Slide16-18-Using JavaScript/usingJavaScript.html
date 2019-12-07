@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Welcome LWC">
+        <div>
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <div class="bodyClass">
+                        Hello World
+                    </div>
+                    <div> 
+                        {greeting}
+                       </div>
+                       <lightning-input  label="Name" value={greeting} onchange={handleChange} ></lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
