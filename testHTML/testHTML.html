@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Html</title>
+</head>
+
+<body>
+    Hello World
+    <template id="mytemp">
+        <p>
+            item
+        </p>
+    </template>
+    <div id="mydiv" />
+    <script>
+
+        let coll = [{ name: "suman" }, { name: "sohaan" }];
+        let tmp = document.querySelector('#mytemp');
+        let d = document.querySelector('#mydiv');
+        for (i in coll) {
+
+            tmp.content.querySelector('p').innerText = coll[i].name;
+            let clon = document.importNode(tmp.content, true);
+            d.appendChild(clon);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML Custom Component</title>
+</head>
+
+<body>
+    <div style="height:300px;">
+        <h1>Custom HTML Element </h1>
+
+        <full-name fname="suman" lname="Halder">
+        </full-name>
+        <full-name fname="sohaan" lname="Halder">
+        </full-name>
+    </div>
+    <p> not in Custom</p>
+
+    <style>
+        p{
+            color: blue;
+        }
+    </style>
+    <script>
+        class DemoCustomElement extends HTMLElement {
+            constructor() {
+                super();
+                let innerHTML = `
+              <h1> ${this.fname}  </h1>
+              <p> ${this.lname}  </p>
+              <style>
+                  p
+                  {
+                      color:#FF0000;
+                  }
+              </style>
+              `;
+             let shadow = this.attachShadow({mode:"open"});
+             shadow.innerHTML = innerHTML;  
+            }
+
+            set fname(val) {
+                this.setAttribute("fname", val);
+            }
+
+            get fname() {
+                return this.getAttribute('fname');
+            }
+
+            set lname(val) {
+                this.setAttribute("lname", val);
+            }
+
+            get lname() {
+                return this.getAttribute('lname');
+            }
+
+            connectedCallback() {
+                console.log('Element inserted in DOM');
+            }
+
+            disconnectedCallback() {
+                console.log('Element removed from DOM');
+            }
+
+        }
+
+        window.customElements.define('full-name', DemoCustomElement);
+    </script>
+</body>
+
+</html>
