@@ -1,0 +1,13 @@
+<template>
+    <lightning-record-edit-form object-api-name="Account" onsuccess={handleSuccess}>
+        <lightning-messages></lightning-messages>
+        <div class="slds-m-around_medium">
+            <lightning-input-field field-name='Id' value={accountId}></lightning-input-field>
+            <lightning-input-field field-name='Name'></lightning-input-field>
+            <div class="slds-m-top_medium">
+                <lightning-button variant="brand" type="submit" name="save" label="Create Account">
+                </lightning-button>
+           </div>
+       </div>
+    </lightning-record-edit-form>
+</template>
