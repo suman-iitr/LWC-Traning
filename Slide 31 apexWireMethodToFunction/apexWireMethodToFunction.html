@@ -1,0 +1,17 @@
+<template>
+    <lightning-card
+        title="ApexWireMethodToFunction"
+        icon-name="custom:custom63"
+    >
+        <div class="slds-m-around_medium">
+            <template if:true={contacts}>
+                <template for:each={contacts} for:item="contact">
+                    <p key={contact.Id}>{contact.Name}</p>
+                </template>
+            </template>
+            <template if:true={error}>
+               Error
+            </template>
+        </div>
+    </lightning-card>
+</template>
