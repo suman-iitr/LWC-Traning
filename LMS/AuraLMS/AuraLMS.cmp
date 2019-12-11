@@ -1,0 +1,17 @@
+<aura:component description="testMessageAura" implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute type="String" name="myMessage"/>
+    <aura:attribute type="String" name="receivedMessage"/>
+    <lightning:messageChannel type="LMSDemo__c" aura:id="lmsDemoCTS" onMessage="{!c.handleReceiveMessage}"/>
+
+    <lightning:card title="Aura Component" iconName="custom:custom18">
+        <div class="slds-m-around_medium">
+            <lightning:input type="text" value="{!v.myMessage}" label="Message To Send"/>
+            <lightning:button label="Publish" onclick="{! c.handleClick}"/>
+            <br/>
+            <br/>
+            <p>Latest Received Message</p>
+            <lightning:formattedText value="{!v.receivedMessage}"/>
+        </div>
+    </lightning:card>
+</aura:component>	
+
