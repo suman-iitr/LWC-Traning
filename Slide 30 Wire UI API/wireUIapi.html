@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Wire UI API" icon-name="custom:custom67">
+        <template if:true={user.data}>
+            <div class="slds-m-around_medium">
+                <p>Id: {userId}</p>
+                <p>Name: {name}</p>
+                <p>
+                    <lightning-formatted-email
+                        value={email}
+                    ></lightning-formatted-email>
+                </p>
+            </div>
+        </template>
+        <template if:true={user.error}>
+            {user.error}
+        </template>
+       
+    </lightning-card>
+</template>
