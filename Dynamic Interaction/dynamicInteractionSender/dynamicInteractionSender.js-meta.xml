@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Dynamic Interaction Sender</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage">
+            <property name="senderText" type="String"/> <!--the api variable declared in js--> 
+            <event name="sendText" label="Send Text" description="This event fires for sendig text 1"> <!--event name declared in JS -->
+                <schema>
+                    {
+                        "type": "object",
+                        "properties": {
+                            "senderText": {
+                                "type": "string",
+                                "title": "Sender Text",
+                                "description": "Enter your description here."
+                            }
+                        }
+                    }
+                </schema>
+            </event>
+            <property name="senderText1" type="String"/> <!--the api variable declared in js--> 
+            <event name="sendText1" label="Send Text 1" description="This event fires for sendig text 2"> <!--event name declared in JS -->
+                <schema>
+                    {
+                        "type": "object",
+                        "properties": {
+                            "senderText1": {
+                                "type": "string",
+                                "title": "Sender Text 1",
+                                "description": "Enter your Sender Text 1."
+                            }
+                        }
+                    }
+                </schema>
+            </event>
+        </targetConfig>
+    </targetConfigs>
+    <description>meta xml description</description>
+</LightningComponentBundle>
